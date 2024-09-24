@@ -36,12 +36,12 @@ def document_validation():
       if 'document' not in request.files:
         return jsonify({'error': 'Missing document in request'}), 400
 
+      type = request.form.get('type')
       document = request.files['document']
       documents = [{"name": "document", "file": document}]
 
       saveFiles(documents, "documents")
-      result = verifyDocument("cnh")
-      removeFiles("documents")
+      result = verifyDocument(type)
 
       return jsonify(result), 200
     

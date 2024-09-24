@@ -3,7 +3,7 @@ import shutil
 
 def saveFiles(files, filesFolder):
   uploads_dir = os.path.join(filesFolder)
-  os.makedirs(uploads_dir, exist_ok=False)
+  os.makedirs(uploads_dir, exist_ok=True)
 
   for emphasisFile in files:
     name = emphasisFile['name']

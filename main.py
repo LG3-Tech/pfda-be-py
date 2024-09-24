@@ -35,7 +35,7 @@ def document_validation():
     try:
       if 'document' not in request.files:
         return jsonify({'error': 'Missing document in request'}), 400
-      
+
       document = request.files['document']
       documents = [{"name": "document", "file": document}]
 
@@ -47,3 +47,7 @@ def document_validation():
     
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

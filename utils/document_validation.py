@@ -19,7 +19,7 @@ def verifyDocument(documentType):
 
     print(f"Predictions: {prediction[0]}")
 
-    if document_class != 0:
+    if document_class == 0:
         return False
 
     return True
